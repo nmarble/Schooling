@@ -1,2 +1,2 @@
-# Threads
-Random workings with threads/parallel computing
+# Schooling
+Random work done in school
