@@ -1,0 +1,86 @@
+%nav.navbar.navbar-default{:role => "navigation"}
+  .container-fluid
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "/"} Pills: A Pocket Guide
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li
+          %a{:href => "/homepage"} Home
+        %li
+          %a{:href => "/drugs"} Drug Index
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            Type of User
+            %span.caret
+          %ul.dropdown-menu{:role => "menu"}
+            %li
+              %a{:href => "#"} Patient
+            %li
+              %a{:href => "#"} Doctor
+            %li
+              %a{:href => "#"} Manufacturer
+%body
+  %div
+    %div{:class=>'header_transbox'}
+      %h1.title Edit Drug
+
+%center
+  %div.fact_card{:style => "width: 75%"}
+    = form_tag drugs_path, :method => 'put' do
+      %table{:id=>'drug_list', :style => "width: 100%"}
+        %tr
+          %td{:style => 'width: 15%'}
+            = label :drug, :title, 'Name:'
+          %td
+            = text_field :drug, :title, :id => 'drug_name', :class => 'form'
+        %tr
+          %td
+            = label :drug, :category, 'Category:'
+          %td
+            = text_field :drug, :category, :class => 'form'
+        %tr
+          %td
+            = label :drug, :directions, 'Directions:'
+          %td
+            = text_field :drug, :directions, :class => 'form'
+        %tr
+          %td
+            = label :drug, :uses, 'Uses:'
+          %td
+            = text_field :drug, :uses, :class => 'form'
+        %tr
+          %td
+            = label :drug, :warnings, 'Warnings:'
+          %td
+            = text_field :drug, :warnings, :class => 'form'
+        %tr
+          %td
+            = label :drug, :active_ingredient, 'Active Ingredient:'
+          %td
+            = text_field :drug, :active_ingredient, :id => 'active_ingredient', :class => 'form'
+        %tr
+          %td
+            = label :drug, :inactive_ingredients, 'Inactive ingredients:'
+          %td
+            = text_field :drug, :inactive_ingredients, :class => 'form'
+        %tr
+          %td
+            = label :drug, :other_information, 'Other information:'
+          %td
+            = text_field :drug, :other_information, :class => 'form'
+      = label :drug, :over_the_counter, 'Over the counter:'
+      = check_box :drug, :over_the_counter
+      %p
+      = submit_tag 'submit', :id => 'submit', :class => 'btn btn-primary'
+
+%center
+  =link_to "Back", drugs_path, :class => 'btn btn-primary'
+
+

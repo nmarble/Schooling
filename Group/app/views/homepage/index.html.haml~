@@ -1,0 +1,39 @@
+
+%body
+  %div
+    %div{:class=>'header_transbox'}
+      %h1.title Pills: A Pocket Guide
+
+%div{:class=>'transbox'}
+  %center
+    %p Navigation
+    %div
+    %li
+      %a{ :href => "" } Patients
+    %div
+    %li
+      %a{ :href => "" } Doctors
+    %div
+    %li
+      %a{ :href => "" } Manufacturers
+    %p
+
+%div{:class=>'transbox'}
+  %center
+    %p Search for drug information
+    %div
+    = form_tag homepage_index_path, :method => :get, :id => 'search_form' do
+      = text_field_tag "search"
+      = submit_tag 'Search', :id => 'search_box'
+    %div
+    %p
+
+%p
+  %center
+    = @searched_drug.title
+
+%div{:class=>'transbox'}
+  %center
+    %p Drug Index
+    %p 
+      = link_to 'Drug Index', "/drugs"

@@ -1,0 +1,39 @@
+// Place all the styles related to the drugs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.fact_card{
+  border: solid;
+  border-radius: 4px;
+  border-color: #96cdcd;
+  border-collapse: separate;
+  border-spacing: 50px;
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+  background: #FFF;
+  box-shadow: 7px 7px 5px #2E2F30;
+}
+
+.smaller {
+  width: 100px;
+}
+
+tr {
+  background: #FFFFFF;
+}
+
+.table_fact_card {
+  border: solid;
+  border-radius: 4px;
+  border-color: #96cdcd;
+  border-collapse: separate;
+  margin: 10px;
+  background: #FFF;
+  box-shadow: 7px 7px 5px #2E2F30;
+}
+
+.form {
+  border-radius: 4px;
+  width: 100%;
+}
